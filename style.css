@@ -1,0 +1,196 @@
+/* 
+  - Font sizes (px)
+  10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+  - Spacing system (px)
+  2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+  Order of properties:
+  1.- Display
+  2.- Positioning
+  3.- Box-model
+  4.- Typography
+  5.- Manipulation
+  6.- Miscelaneous
+*/
+
+/* ***************************** */
+/* CANVAS */
+/* ***************************** */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: sans-serif;
+  line-height: 1;
+  font-weight: 400;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* ***************************** */
+/* CUSTOM PROPERTIES */
+/* ***************************** */
+:root {
+  --font-primary: "Fraunces", serif;
+  --font-secondary: "Montserrat", sans-serif;
+
+  --clr-primary-1: hsl(158, 36%, 37%);
+  --clr-primary-2: hsl(30, 38%, 92%);
+
+  --clr-neutral-1: hsl(212, 21%, 14%);
+  --clr-neutral-2: hsl(228, 12%, 48%);
+  --clr-neutral-3: hsl(0, 0%, 100%);
+}
+
+/* ***************************** */
+/* GENERAL/REUSABLE CLASSES/COMPONENTS */
+/* ***************************** */
+.btn {
+  padding: 1.2rem;
+  border: none;
+  border-radius: 5px;
+
+  color: var(--clr-neutral-3);
+
+  transition: all 0.3s;
+
+  background-color: var(--clr-primary-1);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: hsl(158, 36%, 20%);
+}
+
+.grid {
+  display: grid;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* ***************************** */
+/* HELPER CLASSES / UTILITIES */
+/* ***************************** */
+.margin-bottom-md {
+  margin-bottom: 3.2rem !important;
+}
+
+/* ***************************** */
+/* COMMON STYLES */
+/* ***************************** */
+
+/* ***************************** */
+/* CARD */
+/* ***************************** */
+body {
+  font-size: 1.4rem;
+  background-color: var(--clr-primary-2);
+}
+
+main {
+  padding: 4.4rem;
+}
+
+.product-card {
+  max-width: 70rem;
+  margin: 0 auto;
+  border-radius: 15px;
+
+  font-family: var(--font-secondary);
+
+  overflow: hidden;
+  box-shadow: 2px 2px 30px var(--clr-primary-2);
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+
+  padding: 3.5rem;
+
+  background-color: var(--clr-neutral-3);
+}
+
+.product-type {
+  color: var(--clr-neutral-2);
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.product-name {
+  font-family: var(--font-primary);
+  font-size: 3.6rem;
+}
+
+.product-description {
+  color: var(--clr-neutral-2);
+  line-height: 1.6;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.price-now {
+  font-family: var(--font-primary);
+  font-size: 3.6rem;
+  color: var(--clr-primary-1);
+}
+
+.price-before {
+  color: var(--clr-neutral-2);
+  text-decoration: line-through;
+}
+
+@media (max-width: 760px) {
+  .product-info {
+    gap: 3rem;
+
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 715px) {
+  .product-info {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 665px) {
+  .grid--2-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 485px) {
+  main {
+    padding: 3.2rem 2.4rem;
+  }
+}
